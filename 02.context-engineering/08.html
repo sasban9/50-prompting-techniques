@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 8: Prompt Recaps</title>
+    <style>
+        *{box-sizing: border-box;margin: 0;padding: 0;}
+        html{scrollbar-width: none;}
+        body{background: #222;color: #eee;font-size: 2.4rem;font-family: sans-serif;line-height: 2;}
+        h2,h3,h4{background: wheat;color: brown;padding: 0 4rem;font-family: fantasy;}
+        p{background: #fff3;font-size: 2.4rem;padding: 2rem;max-width: 66%;}
+        u{background: wheat;color: #222;padding: 1rem;border-radius: 50px;white-space:nowrap}
+        main{display: flex;flex-wrap: wrap;flex-direction: column;gap: 10rem;}
+        main>div{min-height: 6vh;padding: 1rem;display: flex;align-items: center;flex-direction: column;justify-content: center;}
+        div>div{padding: 1rem;max-width: 50%;}
+        td{border-left: solid 10px;padding-left:2rem;}
+        span{padding: 0 2rem;display: inline-block;max-width: 36%;}
+        div>span:nth-of-type(2n){font-family: serif;box-shadow: 0 0 4px #666;padding: 2rem;}
+        blockquote{background: darkblue;color: yellowgreen;font-family: monospace;font-size: 2rem;padding: 2rem;}
+    </style>
+</head>
+<body>
+    <main>
+        <div>
+            
+<div><h2><small>Step 8: </small> Prompt Recaps</h2></div>
+
+<div><h4>Concept</h4>Large language models don’t have permanent memory. </div>
+<span>They only “see” what you provide in the conversation window. </span>
+<span>Over time, as the conversation grows, they may lose track of earlier details or drift off-topic.</span>
+</div><div>
+<span><u>Prompt recaps</u> are a way to anchor the AI back into the flow. By summarizing past exchanges </span>
+<span>or explicitly telling the model “so far, here’s what we have done,” </span>
+<span>you create continuity and consistency.</span>
+</div><div>
+<span>This is essential in projects that stretch across multiple steps </span>
+<span>— like writing a novel chapter by chapter, running business planning sessions,</span>
+<span>or conducting research discussions.</span>
+</div><div>
+
+<h3>Why It Works</h3>
+<table>
+    <tr>
+        <td><b>&cir; Context consolidation:</b> A short recap reminds the AI of key points without overwhelming it with raw text.</td>
+ 
+        <td><b>&cir; Focus reset:</b> Tells the AI “these are the important bits, ignore the noise.”</td>
+
+        <td><b>&cir; Continuity anchor:</b> Ensures tone, style, and facts remain consistent across outputs.</td>
+    </tr>
+</table>
+
+</div><div>
+
+<h3>Prompt Pattern</h3>
+
+<blockquote>
+Here’s what we’ve done so far:  <br>
+1. [Summary point 1]  <br>
+2. [Summary point 2]  <br>
+3. [Summary point 3]  <br>
+<br>
+Based on this, please continue with [next task].
+</blockquote>
+
+</div><div>
+<div>
+<h3>Example</h3>
+<b>Conversation without recap</b>
+<blockquote>You: “Help me write a detective story in Victorian London.”</blockquote>
+AI: [Writes intro scene.]
+<blockquote>You: “Continue the story.”</blockquote>
+AI: [Forgets it’s Victorian, sets scene in modern London.]
+</div>
+<div><b>Conversation with recap</b>
+
+<blockquote>
+> So far, we have:  <br>
+1. A detective named Inspector Graves.  <br>
+2. The setting is foggy Victorian London.  <br>
+3. A nobleman has been found murdered in an opera house.  <br>
+---<br>
+Continue the story by writing the next 2 paragraphs, keeping style consistent.
+</blockquote>
+AI: [Writes continuation that respects time, place, and tone.]
+</div>
+
+
+</div><div style="background: #f983;">
+<h3>Mini Exercises</h3>
+<div>
+1. <b>Personal recap:</b> Start a story about a time traveler in Ancient Egypt. 
+</div>
+<span>After 2 responses, write your own recap in 3 bullet points and then ask the AI to continue. Compare the continuity with and without a recap.</span>
+</div><div style="background: #2935;">
+<div>2. <b>Fact-heavy recap</b>: Pretend you’re building a startup idea with AI. </div><div>After brainstorming 10 ideas, recap the top 3 in your own words, then ask AI to expand only those. </div><p>Notice how it avoids drifting back into irrelevant options.</p>
+</div><div style="background: #8372;">
+<p>3. <b>Tone recap</b>: Ask AI to write a poem in the style of Rumi. </p>
+<span>Then recap: “So far, the poem is mystical, metaphor-rich, spiritual, and free-verse. </span>
+<p>Continue with another stanza in this same style.” Compare output to when you don’t remind it.</p>
+
+</div><div>
+
+<h3>Reflection Questions</h3>
+<span>&cir; Did the recap make the AI stay more consistent?</span>
+<span>&cir; Was your recap too detailed (overloading) or too short (missing context)?</span>
+<span>&cir; How might you use prompt recaps in your own work (storytelling, research, coding, business strategy)?</span>
+
+</div><div>
+
+<div style="min-width: 400px;"><h3>Pro Tip:</h3>Don’t just recap facts — recap <u>tone, style, and rules.</u> </div>
+<div>If you want consistency, say:
+<blockquote>> “So far, we’re keeping a humorous tone, limiting explanations to under 100 words, and focusing on beginner-friendly language. Continue with the same rules.”</blockquote></div>
+
+<p>That way, the AI doesn’t just remember the <u>what</u>, it remembers the <u>how</u>.</p>
+
+        </div>
+    </main>
+</body>
+</html>

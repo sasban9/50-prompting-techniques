@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Step 6: Embedding Context in Prompts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Goblin+One&family=Homenaje&family=Kranky&family=Mynerve&family=Oswald:wght@200..700&family=Playwrite+DE+SAS:wght@100..400&family=Quintessential&family=Rationale&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sixtyfour&display=swap" rel="stylesheet">
+<style>
+  *{margin: 0;}
+  html{scrollbar-width: none;}
+  body {
+    font-family: 'Roboto', Arial, sans-serif;font-weight: 100;
+    background: #002306;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-size: 3.6rem;line-height: 1.4;
+  }
+  #slideshow {
+    width: 90%;
+    max-width: 1900px;
+    background: #0003;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    position: relative;
+  }
+  .slide {
+    display: none;
+    /* text-align: center; */
+    min-height: 70vh;padding: 1rem 6rem;
+  }
+  .slide.active {
+    display: flex;gap: 2rem;
+    flex-direction: column;justify-content: center;align-items: center;
+  }
+  span {
+    background: none;
+    color: transparent;opacity:0;
+    transition: all 0.4s ease;
+    padding: 2px 4px;text-align: center;
+    /* border-radius: 4px; */
+  }
+  span.visible {
+    background: #0006;backdrop-filter: blur(0);
+    color: #fff;opacity:1;
+  }
+  b span.visible{color: coral;}
+  u{color: #ff0;text-shadow: 0 4px 2px #000;}
+  img {
+    width: 100%;
+    max-width: 400px;
+    /* display: block; */
+    margin: 15px 0;
+    border-radius: 8px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+  }
+  th, td {
+    border: 1px solid #555;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background: #0003;
+  }
+  #hint {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    color: #bbb;
+  }
+</style>
+</head>
+<body>
+
+<div id="slideshow">
+  <div class="slide active" style="background: linear-gradient(85deg, #000, #fff0), url() 50% 50%; background-size: cover;flex-direction: row;">
+    
+<!-- Alright, let’s really unpack **Day 6: Embedding Context in Prompts** so it feels like a full daily lesson with clarity, examples, and practice. -->
+
+
+<h3><small>Step 6</small><br>Embedding Context in Prompts</h3>
+
+</div><div class="slide">
+    <b>Concept</b>
+
+<p><span>Most people give AI vague instructions </span>
+<span>like “Write me a cover letter” </span>
+<span>or “Summarize this article.” </span>
+<span>That leads to generic results. </span>
+<span>The secret to unlocking sharp, tailored responses is </span>
+<span><u>embedding context directly inside the prompt.</u></span></p>
+</div><div class="slide">
+
+Context can be:
+
+<span><b>&cir; Facts</b>(your background, data, references)</span>
+<span><b>&cir; Constraints</b>(word limits, tone, audience)</span>
+<span><b>&cir; Scenario setup</b>(situation, goals, characters)</span>
+</div><div class="slide" style="background: linear-gradient(45deg,#004,#0000), url(https://img.freepik.com/free-photo/top-view-cropped-hands-senior-cook-unrecognizable-cutting-carrot-cooking-vegetable-stew_1098-20510.jpg?semt=ais_hybrid&w=740&q=80) 100% no-repeat;background-size: covr;">
+
+<p><span>Think of it like feeding the AI </span>
+<span><u>all the ingredients</u></span>
+<span>before asking it to cook. </span>
+<span>Without them, it just guesses. </span>
+<span>With them, it becomes precise and relevant.</span></p>
+
+</div><div class="slide">
+
+<h3>Technique</h3>
+
+When embedding context, follow this structure:
+<table style="font-size: 2.6rem;">
+    <tr>
+        
+<td><span><b>1. Set the scene</b> – Who/what/why.</span></td>
+<td><span><b>2. Insert key facts</b> – The must-include information.</span></td>
+</tr><tr>
+<td><span><b>3. Give the instruction</b> – What you want done.</span></td>
+<td><span><b>4. Define the output format</b> – How you want it delivered.</span></td>
+    </tr>
+</table>
+
+</div><div class="slide">
+
+<h3>Example 1: Cover Letter</h3>
+<table style="font-size: 3rem;">
+    <tr>
+        <th>❌ Weak prompt:</th><td><span> “Write me a cover letter for a job.”</span></td>
+    </tr>
+    <tr>
+        
+        <td colspan="2"><b>✅ Context-embedded prompt:</b><br>
+<blockquote><span>“You are a professional career coach. Write me a cover letter for the position of Data Analyst at Google.
+Here are key facts about me:</span><br>
+</blockquote></td>
+    </tr>
+</table>
+</div><div class="slide">
+<p><span>* Recently graduated in Computer Science with top honors.</span><br>
+<span>* Interned at Deloitte working on financial data analysis.</span><br>
+<span>* Strong skills in Python, SQL, and Tableau.</span></p>
+  <span>Make it one page, professional yet approachable, and end with a confident closing line.”</span>
+</div><div class="slide">
+<p>Notice how the second version is <u>self-contained. </u>
+<span>The AI doesn’t need to guess </span>
+<span>— it has your data, role, and style in one place.</span></p>
+
+</div><div class="slide">
+
+<h3>Example 2: Creative Writing</h3>
+
+<b>❌ Weak prompt:</b>
+<span>“Write a sci-fi story.”</span>
+
+<b>✅ Context-embedded prompt:</b>
+<span>“Write a 500-word sci-fi short story.</span>
+</div><div class="slide">
+<p>
+<span><u>Context:</u> Humanity has colonized Mars, but water is running out. A teenage engineer discovers a way to extract water from the soil.</span>
+<span><u>Style:</u> Fast-paced, suspenseful, with a hopeful ending.</span>
+<span><u>Audience:</u> Young adult readers.”</span></p>
+
+</div><div class="slide">
+<h3>Mini Exercises</h3>
+<p>1. Write down <u>5 key facts about yourself</u> (education, hobbies, skills, goals, etc.).</p> 
+<span>Use them in a prompt: “Write a tweet-sized bio for me using these facts.”</span>
+</div><div class="slide">
+2. Take a short article or blog post. Embed the <u>title, author, and date</u> into your prompt: 
+“Summarize this 2019 article by John Smith on climate change in exactly 5 bullet points.”
+</div><div class="slide">
+3. Create a **fictional product** (e.g., a smart pillow). Embed product details in the prompt:
+“Write a sales pitch for the SmartPillow. Context: tracks sleep patterns, auto-adjusts firmness, connects to an app. Tone: witty and playful.”
+
+</div><div class="slide">
+<h3>Reflection Questions</h3>
+
+<span>&cir; Did you notice how much sharper the outputs became once you embedded details?</span>
+<span>&cir; What kind of context makes the <u>biggest</u> difference in your use case (facts, style, audience, or scenario)?</span>
+</div><div class="slide">
+<h3>Reflection Questions (contd.)</h3>
+<span>&cir; How can you build a <u>context checklist</u> for your most common prompts?</span>
+
+</div><div class="slide" style="align-items: center;">
+    <h2>FIN!</h2> Sun 25.10.19 
+<!-- Would you like me to show you a real-world example — like how a single person could build and scale a SaaS company or D2C brand solo using agentic AI — so you can see exactly how this plays out step by step? -->
+
+  </div>
+  <!-- <div id="hint">Press → to reveal next part</div> -->
+   <div id="hint"><b>@sasban9</b> Find more at <i>linktr.ee/sasban9</i></div>
+</div>
+
+<script>
+  let slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+
+  function revealNextSpan() {
+    let spans = slides[currentSlide].querySelectorAll('span');
+    let nextSpan = Array.from(spans).find(span => !span.classList.contains('visible'));
+
+    if (nextSpan) {
+      nextSpan.classList.add('visible');
+    } else {
+      // All spans visible, move to next slide if available
+      if (currentSlide < slides.length - 1) {
+        slides[currentSlide].classList.remove('active');
+        currentSlide++;
+        slides[currentSlide].classList.add('active');
+        resetSpans();
+      }
+    }
+  }
+
+  function resetSpans() {
+    let spans = slides[currentSlide].querySelectorAll('span');
+    spans.forEach(span => span.classList.remove('visible'));
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') {
+      revealNextSpan();
+    }
+  });
+
+// Reveal the first span on load (optional)
+resetSpans();
+</script>
+
+</body>
+</html>
